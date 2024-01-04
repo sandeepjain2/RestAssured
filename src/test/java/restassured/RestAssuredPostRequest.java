@@ -1,15 +1,17 @@
 package restassured;
 
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
-public class RestAssuredRequests {
+public class RestAssuredPostRequest {
 
-    private static String requestBody = " { \"title\" : \"foo\", \"body\" : \"bar\", \"userId\" : \"1\" }";
+    private static String requestBody = "{\n" +
+                " \"title\" : \"foo\",\n" +
+                " \"body\" : \"bar\", \n" +
+                " \"userId\" : \"1\" \n}";
 
     @BeforeAll
     public static void setUp(){
@@ -19,7 +21,7 @@ public class RestAssuredRequests {
     @Test
     public void postRequest(){
         Response response = given()
-                .header("ContentType", "application/json")
+                .header("Content-Type", "application/json")
                 .and()
                 .body(requestBody)
                 .when()

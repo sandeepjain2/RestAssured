@@ -1,0 +1,31 @@
+instead of sending hardcode json body, we can send customize data along with post request
+
+add new JSON Object maven repo
+
+JSONObject jsonObject = new JSONObject();
+
+//insert key value pair
+ jsonObject.put("name", "sandeep");
+ jsonObject.put("name", "sandeep");
+ jsonObject.put("name", "sandeep");
+
+ we can also use map to put object in key value pair and then we can pass map object into jsonObject
+ Map <String, String> map = new HashMap<>();
+ map.put("name", "sandeep");
+ map.put("name", "sandeep");
+ map.put("name", "sandeep");
+ JSONObject jsonObject1 = new JSONObject(map);
+
+
+ Lastly, we can also use POJO(plain old java object) class,this process called serialization
+ as we are converting the object to the body.
+
+ initialize values in the mapping class---
+ Send object along with post request---
+
+ {
+ "name" : "sandeep",
+ "name" : "sandeep",
+ "name" : "sandeep",
+ "name" : "sandeep"
+ }
