@@ -27,18 +27,5 @@ public class SamplePostTestUsingPOJOClass {
                 .thenReturn().asString();
 
         System.out.println(response);
-
-        // Converting response body to object
-/*
-        ResponseDataObjects responseDataObjects = given()
-                .log()
-                .all()
-                .header("authorization", "Bearer0421655cfe7ba40a791e0ce32d83ad33363348919c11627f409a3228f205e15f")
-                .accept(ContentType.JSON)
-                .contentType("application/json")
-                .and()
-                .body(cu)
-                .post("https://gorest.co.in/public-api/users")
-                .thenReturn().as(ResponseDataObjects.class);*/
     }
 }
